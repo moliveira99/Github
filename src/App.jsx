@@ -4,7 +4,7 @@ import './style.css';
 // Aqui é para resumir o url para retirar dados de usuários.
 const API_URL = "https://api.github.com/users/";
 
-function GitHubProfiles() {
+function App() {
     const [userData, setUserData] = useState(null);
     const [repos, setRepos] = useState([]);
     const [location, setLocation] = useState(null);
