@@ -1,14 +1,28 @@
-body, .container, .info {
+body, .container, .info, h1 {
     display: flex;
     justify-content: center;
 }
 
-body, .user-form input[type="text"] {
-    background-color: #242020;
+html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
 }
 
-.user-form input[type="text"], .card, a, #repo, .repo {
+body, .user-form input[type="text"] {
+    background-color: #202124;
+}
+
+.user-form input[type="text"], .card, a, h2, h1, #repo, .repo {
     color: #fff;
+}
+
+h1 {
+    margin: 10rem 0rem 0rem 0.3rem;
+}
+
+#github {
+    margin: 0rem;
+    text-align: center;
 }
 
 a, #repo, .repo {
@@ -20,7 +34,7 @@ a, #repo, .repo {
 }
 
 .user-form {
-    margin-top: 15rem;
+    margin-top: 2rem;
     padding: 0.6rem;
     border-radius: 4rem;
 }
@@ -50,6 +64,10 @@ a, #repo, .repo {
     border-radius: 50%;
 }
 
+.avatar, .repo {
+    transition: 0.4s;
+}
+
 .info {
     margin-top: 1rem;
     padding: 0;
@@ -71,9 +89,9 @@ a, #repo, .repo {
     padding: 0.6rem;
     background-color: #303134;
     border-radius: 1rem;
-    transition: 0.4s;
 }
 
-.repo:hover {
+img:hover, .repo:hover {
+    scale: 1.1;
     filter: brightness(1.3);
 }

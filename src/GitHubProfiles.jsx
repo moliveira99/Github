@@ -67,6 +67,8 @@ function GitHubProfiles() {
 
     return (
         <>
+            <h1>Buscador de Perfis</h1>
+            <h2 id='github'><a href="https://github.com/">by Github</a></h2>
             <form className="user-form" onSubmit={handleSubmit}>
                 <input type="text" name="search" autoFocus placeholder="Procure seu perfil no Github!" />
             </form>
@@ -74,17 +76,17 @@ function GitHubProfiles() {
             {userData && (
                 <div className="card">
                     
-                    <img src={userData.avatar_url} alt="avatar" className="avatar" />
+                    <a href={"https://github.com/" + userData.name.replace(/\s/g, '') + ".png"}><img src={userData.avatar_url} alt="avatar" className="avatar" /></a>
 
                     <div className="user-info">
-                    <h2><a href={githubBaseUrl + userData.name}>{userData.name}</a> <span className="separator">•</span> {userData.location}</h2>
+                    <h2><a href={githubBaseUrl + userData.name.replace(/\s/g, '')}>{userData.name}</a> <span className="separator">•</span> <a href={"https://www.google.com.br/maps/place/" + userData.location}>{userData.location}</a></h2>
 
                         <p>{userData.bio}</p>
 
                         <ul className="info">
-                            <li>{userData.followers}<strong> Seguidores</strong></li>
-                            <li>{userData.following}<strong> Seguindo</strong></li>
-                            <li>{userData.public_repos}<strong> Repositórios</strong></li>
+                            <a href={githubBaseUrl + userData.name.replace(/\s/g, '') + "?tab=followers"}><li>{userData.followers}<strong> Seguidores</strong></li></a>
+                            <a href={githubBaseUrl + userData.name.replace(/\s/g, '') + "?tab=following"}><li>{userData.following}<strong> Seguindo</strong></li></a>
+                            <a href={githubBaseUrl + userData.name.replace(/\s/g, '') + "?tab=repositories"}><li>{userData.public_repos}<strong> Repositórios</strong></li></a>
                         </ul>
 
                         <div id="repo">
